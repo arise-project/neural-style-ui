@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
 
 namespace conda_run
 {
@@ -7,7 +9,13 @@ namespace conda_run
     {
         static void Main(string[] args)
         {
-            var workingDirectory = @"C:\w\neural-style-pt";
+			IConfiguration Configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables()
+                .AddCommandLine(args)
+            .Build();
+
+            var workingDirectory = Configuration["NeuralStyle:WorkDir"];
 var process = new Process
 {
     StartInfo = new ProcessStartInfo
