@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup Condition="'$(Configuration)' == 'Debug'">
-    <None Update="appSettings.jsonbotnet build
-    " CopyToOutputDirectory="PreserveNewest" />
+    <None Update="appSettings.jsonbotnet" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="arguments.csv" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <PropertyGroup>
