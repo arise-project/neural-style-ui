@@ -12,5 +12,10 @@ namespace python_run
         public string Backend { get; set; } 
         public int NumIterations { get; set; } 
         public int ImageSize { get; set; }
+
+        public override string ToString()
+        {
+            return null;
+        }
     }
 }
