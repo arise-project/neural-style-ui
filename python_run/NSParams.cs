@@ -15,7 +15,8 @@ namespace python_run
 
         public override string ToString()
         {
-            return null;
+            var gpu = string.Join(",", Gpu);
+            return $"-num_iterations {NumIterations} -style_image {StyleImage} -content_image {ContentImage} -output_image {OutputImage} -image_size {ImageSize} -gpu {gpu} -backend {Backend} -save_iter 0";
         }
 
         public NSParams Clone()
