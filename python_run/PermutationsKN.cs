@@ -4,7 +4,7 @@ namespace python_run
 {
     public class PermutationsKN
     {
-        public IEnumerable<NSParams> Generate(IEnumerable<string> files, NSParams copy)
+        public IEnumerable<NSParams> Generate(IEnumerable<string> files, NSParams copy, int k)
         {
             return null;
         }

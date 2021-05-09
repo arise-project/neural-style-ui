@@ -9,7 +9,7 @@ namespace python_run
         {
             var files = Directory.GetFiles(strategy.Storage.NormalizedSource, "*.jpg", SearchOption.AllDirectories);
 
-            var pairs = new PermutationsKN().Generate(files, new NSParams());
+            var pairs = new PermutationsKN().Generate(files, new NSParams(), 2);
 
             foreach(var pair in pairs)
             {
