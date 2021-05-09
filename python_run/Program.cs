@@ -10,8 +10,9 @@ namespace python_run
         {
             if (string.IsNullOrWhiteSpace(System.Environment.GetEnvironmentVariable("NEURAL_STYLE_HOME")))
             {
-                Console.WriteLine("Env NEURAL_STYLE_HOME is undefined");
-                return -1;
+                System.Environment.SetEnvironmentVariable("NEURAL_STYLE_HOME", "/home/eugene/Projects/neural-style-pt/");
+                // Console.WriteLine("Env NEURAL_STYLE_HOME is undefined");
+                // return -1;
             }
 
             if (!Directory.Exists(System.Environment.GetEnvironmentVariable("NEURAL_STYLE_HOME")))
@@ -26,15 +27,16 @@ namespace python_run
 
             foreach (var variant in variants)
             {
+                Console.WriteLine(variant.ToString());
                 var res = new NeyralStyleRunnerPython().Execute(variant.ToString());
                 if (res.Length == 2)
                 {
-                    Console.WriteLine(res[0]);
                     if (!string.IsNullOrEmpty(res[1]))
                     {
                         Console.WriteLine("Error {0}", res[1]);
                     }
                 }
+                break;
             }
 
             return 0;

@@ -11,10 +11,13 @@ namespace python_run
             foreach(var variant in variants)
             {
                 var c = copy.Clone();
-                c.ContentImage = variant[0];
-                c.StyleImage = variant[1];
-                yield return c;
+                if(variant[0] != variant[1])
+                {
+                    c.ContentImage = variant[0];
+                    c.StyleImage = variant[1];
+                    yield return c;
+                }
             }
         }
     }
-}
+} 

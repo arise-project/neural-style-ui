@@ -25,6 +25,7 @@ namespace python_run
             {
                 using (StreamReader reader = process.StandardOutput)
                 {
+                    process.WaitForExit();
                     string stderr = process.StandardError.ReadToEnd(); // Here are the exceptions from our Python script
                     string result = reader.ReadToEnd(); // Here is the result of StdOut(for example: print "test")
                     return new string [] { result, stderr };
