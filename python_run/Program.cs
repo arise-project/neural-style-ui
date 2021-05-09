@@ -20,7 +20,7 @@ namespace python_run
                 return -1;
             }
 
-            var config = JsonSerializer.Deserialize<PermutationStrategy>(File.ReadAllText("all.config"));
+            var config = JsonSerializer.Deserialize<PermutationStrategy>(File.ReadAllText("all_config.json"));
 
             var variants = new ParamsBuilder().Build(config);
 
