@@ -23,6 +23,13 @@ namespace python_run
 
             var config = JsonSerializer.Deserialize<PermutationStrategy>(File.ReadAllText("all_config.json"));
 
+            if(!string.IsNullOrEmpty(config.Storage.Source))
+            {
+                var count = new NormaliseStorage().Execute(config.Storage.Source, config.Storage.NormalizedSource);
+                Console.WriteLine("Prepared {0} files", count);
+                return 0;
+            }
+
             var variants = new ParamsBuilder().Build(config);
 
             foreach (var variant in variants)

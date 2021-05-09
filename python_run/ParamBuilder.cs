@@ -8,7 +8,7 @@ namespace python_run
     {
         public IEnumerable<string> Build(PermutationStrategy strategy)
         {
-            var files = Directory.GetFiles(strategy.Storage.Source, "*.jpg", SearchOption.AllDirectories);
+            var files = Directory.GetFiles(strategy.Storage.NormalizedSource, "*.jpg", SearchOption.AllDirectories);
 
             var pairs = new PermutationsKN().Generate(files.ToArray(), strategy.ScriptArguments);
 
