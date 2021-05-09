@@ -10,9 +10,9 @@
 			"request": "launch",
 			"preLaunchTask": "build",
 			// If you have changed target frameworks, make sure to update the program path.
-			"program": "${workspaceFolder}/conda_run/bin/Debug/netcoreapp3.1/conda_run.dll",
+			"program": "${workspaceFolder}/python_run/bin/Debug/netcoreapp3.1/python_run.dll",
 			"args": [],
-			"cwd": "${workspaceFolder}/conda_run",
+			"cwd": "${workspaceFolder}/python_run",
 			// For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
 			"console": "internalConsole",
 			"stopAtEntry": false
