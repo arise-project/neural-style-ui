@@ -17,5 +17,16 @@ namespace python_run
         {
             return null;
         }
+
+        public NSParams Clone()
+        {
+            return new NSParams {
+                Backend = Backend,
+                Gpu = Gpu,
+                ImageSize = ImageSize,
+                NumIterations = NumIterations,
+                OutputImage = OutputImage
+            };
+        }
     }
 }

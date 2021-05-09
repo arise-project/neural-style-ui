@@ -23,7 +23,7 @@ namespace python_run
         }
 
         // Print all the permuataions
-        static IEnumerable<List<string>> permutations(string[] arr, int len, int L)
+        public static IEnumerable<List<string>> permutations(string[] arr, int len, int L)
         {
             // There can be (len)^l
             // permutations
