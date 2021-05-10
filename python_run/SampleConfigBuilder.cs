@@ -20,7 +20,7 @@ namespace python_run
                     Backend = "cudnn",
                     NumIterations = 800
                 },
-                Storage = new StorageParams {
+                Storage = new PStorageParams {
                     Source = "/home/eugene/Pictures/2/",
                     NormalizedSource = "/home/eugene/Pictures/norm/",
                     Destination = "/home/eugene/Pictures/grid/"

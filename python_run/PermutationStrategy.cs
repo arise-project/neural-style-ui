@@ -1,11 +1,7 @@
 namespace python_run
 {
-    public class PermutationStrategy
+    public class PermutationStrategy : BaseStrategy
     {
-        public NSParams ScriptArguments { get; set; }
-
-        public StartParams Runner { get; set; }
-
-        public StorageParams Storage { get; set; }
+           public PStorageParams Storage { get; set; }
     }
 }

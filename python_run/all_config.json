@@ -7,15 +7,15 @@
       0
     ],
     "Backend": "cudnn",
-    "NumIterations": 800,
-    "ImageSize": 800
+    "NumIterations": 500,
+    "ImageSize": 700
   },
   "Runner": {
     "Runner": "python3",
     "Script": "neural_style.py"
   },
   "Storage": {
-    "Source": "/home/eugene/Pictures/2/",
+    "Source": "",
     "NormalizedSource": "/home/eugene/Pictures/norm/",
     "Destination": "/home/eugene/Pictures/grid/"
   }

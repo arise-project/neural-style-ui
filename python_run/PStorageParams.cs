@@ -1,6 +1,6 @@
 namespace python_run
 {
-    public class StorageParams
+    public class PStorageParams
     {
         public string Source { get; set; }
 
