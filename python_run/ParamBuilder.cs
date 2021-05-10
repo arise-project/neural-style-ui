@@ -17,5 +17,19 @@ namespace python_run
                 yield return pair.ToString();
             }
         }
+
+        public IEnumerable<string> Build(MatrixStrategy strategy)
+        {
+            var c_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "/c/", "*.jpg", SearchOption.AllDirectories);
+
+            var s_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "/s/", "*.jpg", SearchOption.AllDirectories);
+
+            var pairs = new Matrix().Generate(c_files, s_files, strategy.ScriptArguments);
+
+            foreach(var pair in pairs)
+            {
+                yield return pair.ToString();
+            }
+        }
     }
 }

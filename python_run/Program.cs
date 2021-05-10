@@ -26,19 +26,26 @@ namespace python_run
             }
 
             IEnumerable<string> variants = null;
-
+            string dest = null;
+            IVariants core = null;
             switch(t)
             {
                 case StrategyType.Permutation:
-                variants = new PVariants().Generate();
+                core = new PVariants();
+                break;
+                case StrategyType.Matrix:
+                core = new MVariants();
                 break;
             }
 
-            if(variants == null)
+            if(core == null)
             {
                 Console.WriteLine("No data for startegy {0}", t);
                 return 1;
             }
+
+            variants = core.Generate();
+            dest = core.GetDestination();
             
             foreach (var variant in variants)
             {
@@ -55,7 +62,7 @@ namespace python_run
                         var result = Directory.GetFiles(workDir, "*.png", SearchOption.TopDirectoryOnly);
                         foreach (var r in result)
                         {
-                            File.Move(r, Path.Combine(config.Storage.Destination, Path.GetFileName(r)));
+                            File.Move(r, Path.Combine(dest, Path.GetFileName(r)));
                         }
                     }
                 }

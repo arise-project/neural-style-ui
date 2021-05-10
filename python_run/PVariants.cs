@@ -5,12 +5,16 @@ using System.Text.Json;
 
 namespace python_run
 {
-    public class PVariants
+    public class PVariants : IVariants
     {
+        PermutationStrategy config;
+        public PVariants()
+        {
+            config = JsonSerializer.Deserialize<PermutationStrategy>(File.ReadAllText("p_all_config.json"));
+        }
         public IEnumerable<string> Generate()
         {
-            var config = JsonSerializer.Deserialize<PermutationStrategy>(File.ReadAllText("p_all_config.json"));
-
+            
             if (!string.IsNullOrEmpty(config.Storage.Source))
             {
                 var count = new NormaliseStorage().Execute(config.Storage.Source, config.Storage.NormalizedSource);
@@ -19,6 +23,11 @@ namespace python_run
             }
 
             return new ParamsBuilder().Build(config);
+        }
+
+        public string GetDestination()
+        {
+            return config.Storage.Destination;
         }
     }
 }

@@ -5,7 +5,7 @@ namespace python_run
 {
     public class Matrix
     {
-        public IEnumerable<NSParams> Generate(List<string> dim1, List<string> dim2, NSParams copy)
+        public IEnumerable<NSParams> Generate(IEnumerable<string> dim1, IEnumerable<string> dim2, NSParams copy)
         {
             foreach(string d1 in dim1)
             {
