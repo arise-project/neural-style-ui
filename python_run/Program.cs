@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
@@ -8,6 +9,8 @@ namespace python_run
     {
         static int Main(string[] args)
         {
+            StrategyType t = StrategyType.Matrix;
+
             System.Environment.SetEnvironmentVariable("NEURAL_STYLE_HOME", "/home/eugene/Projects/neural-style-pt/");
             var workDir = System.Environment.GetEnvironmentVariable("NEURAL_STYLE_HOME");
             if (string.IsNullOrWhiteSpace(workDir))
@@ -22,17 +25,21 @@ namespace python_run
                 return -1;
             }
 
-            var config = JsonSerializer.Deserialize<PermutationStrategy>(File.ReadAllText("all_config.json"));
+            IEnumerable<string> variants = null;
 
-            if (!string.IsNullOrEmpty(config.Storage.Source))
+            switch(t)
             {
-                var count = new NormaliseStorage().Execute(config.Storage.Source, config.Storage.NormalizedSource);
-                Console.WriteLine("Prepared {0} files", count);
-                return 0;
+                case StrategyType.Permutation:
+                variants = new PVariants().Generate();
+                break;
             }
 
-            var variants = new ParamsBuilder().Build(config);
-
+            if(variants == null)
+            {
+                Console.WriteLine("No data for startegy {0}", t);
+                return 1;
+            }
+            
             foreach (var variant in variants)
             {
                 Console.WriteLine(variant.ToString());
