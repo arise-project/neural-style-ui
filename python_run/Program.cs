@@ -66,7 +66,7 @@ namespace python_run
                         }
                     }
                 }
-                break;
+                //break;
             }
 
             return 0;
