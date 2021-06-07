@@ -36,6 +36,9 @@ namespace python_run
                 case StrategyType.Matrix:
                 core = new MVariants();
                 break;
+                case StrategyType.FiftyFifty:
+                core = new FVariants();
+                break;
             }
 
             if(core == null)
