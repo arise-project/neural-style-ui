@@ -9,7 +9,7 @@ namespace python_run
     {
         static int Main(string[] args)
         {
-            StrategyType t = StrategyType.Matrix;
+            StrategyType t = StrategyType.FiftyFifty;
 
             System.Environment.SetEnvironmentVariable("NEURAL_STYLE_HOME", "/home/eugene/Projects/neural-style-pt/");
             var workDir = System.Environment.GetEnvironmentVariable("NEURAL_STYLE_HOME");

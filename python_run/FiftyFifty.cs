@@ -8,7 +8,7 @@ namespace python_run
     {
         public IEnumerable<NSParams> Generate(IEnumerable<string> dim1, IEnumerable<string> dim2, NSParams copy)
         {
-            int count = dim2.Count() / dim1.Count();
+            int count = dim1.Count() / dim2.Count();
             int index = 0;
             var enumerator = dim2.GetEnumerator();
             enumerator.MoveNext();

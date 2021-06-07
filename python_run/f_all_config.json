@@ -1,0 +1,23 @@
+{
+  "Storage": {
+    "ContentSource": "",
+    "StyleSource": "",
+    "NormalizedSource": "/home/eugene/Pictures/norm/",
+    "Destination": "/home/eugene/Pictures/grid/"
+  },
+  "ScriptArguments": {
+    "StyleImage": null,
+    "ContentImage": null,
+    "OutputImage": "test.png",
+    "Gpu": [
+      0
+    ],
+    "Backend": "cudnn",
+    "NumIterations": 500,
+    "ImageSize": 600
+  },
+  "Runner": {
+    "Runner": "python3",
+    "Script": "neural_style.py"
+  }
+}
