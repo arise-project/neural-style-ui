@@ -13,7 +13,7 @@ namespace python_run
             foreach(var variant in variants)
             {
                 var c = copy.Clone();
-                var img = Path.GetFileNameWithoutExtension(variant[0]) + "_" + Path.GetFileNameWithoutExtension(variant[1]) + ".png";
+                var img = Path.GetFileNameWithoutExtension(variant[0]) + "_" + Path.GetFileNameWithoutExtension(variant[1]) + ".jpg";
                 if(variant[0] != variant[1] && !check.Contains(img))
                 {
                     c.ContentImage = variant[0];

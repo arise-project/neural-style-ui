@@ -14,7 +14,7 @@ namespace python_run
                     Script = "neural_style.py"
                 },
                 ScriptArguments = new NSParams{
-                    OutputImage = "test.png",
+                    OutputImage = "test.jpg",
                     ImageSize = 800,
                     Gpu = new int [] { 0 },
                     Backend = "cudnn",
@@ -40,7 +40,7 @@ namespace python_run
                     Script = "neural_style.py"
                 },
                 ScriptArguments = new NSParams{
-                    OutputImage = "test.png",
+                    OutputImage = "test.jpg",
                     ImageSize = 800,
                     Gpu = new int [] { 0 },
                     Backend = "cudnn",

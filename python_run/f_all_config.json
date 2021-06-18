@@ -8,12 +8,12 @@
   "ScriptArguments": {
     "StyleImage": null,
     "ContentImage": null,
-    "OutputImage": "test.png",
+    "OutputImage": "test.jpg",
     "Gpu": [
       0
     ],
     "Backend": "cudnn",
-    "NumIterations": 500,
+    "NumIterations": 600,
     "ImageSize": 600
   },
   "Runner": {

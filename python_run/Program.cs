@@ -62,7 +62,7 @@ namespace python_run
                     }
                     else
                     {
-                        var result = Directory.GetFiles(workDir, "*.png", SearchOption.TopDirectoryOnly);
+                        var result = Directory.GetFiles(workDir, "*.jpg", SearchOption.TopDirectoryOnly);
                         foreach (var r in result)
                         {
                             File.Move(r, Path.Combine(dest, Path.GetFileName(r)));

@@ -14,7 +14,7 @@ namespace python_run
                     var c = copy.Clone();
                     c.ContentImage = d1;
                     c.StyleImage = d2;
-                    var img = Path.GetFileNameWithoutExtension(d1) + "_" + Path.GetFileNameWithoutExtension(d2) + ".png";
+                    var img = Path.GetFileNameWithoutExtension(d1) + "_" + Path.GetFileNameWithoutExtension(d2) + ".jpg";
                     c.OutputImage = img;
                     yield return c;
                 }

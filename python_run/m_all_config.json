@@ -8,7 +8,7 @@
   "ScriptArguments": {
     "StyleImage": null,
     "ContentImage": null,
-    "OutputImage": "test.png",
+    "OutputImage": "test.jpg",
     "Gpu": [
       0
     ],
