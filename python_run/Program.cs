@@ -9,6 +9,8 @@ namespace python_run
     {
         static int Main(string[] args)
         {
+            // new SampleConfigBuilder().SaveP();
+            // return 0;
             StrategyType t = StrategyType.FiftyFifty;
 
             System.Environment.SetEnvironmentVariable("NEURAL_STYLE_HOME", "/home/eugene/Projects/neural-style-pt/");
@@ -60,13 +62,10 @@ namespace python_run
                     {
                         Console.WriteLine("Error {0}", res[1]);
                     }
-                    else
+                    var result = Directory.GetFiles(workDir, "*.jpg", SearchOption.TopDirectoryOnly);
+                    foreach (var r in result)
                     {
-                        var result = Directory.GetFiles(workDir, "*.jpg", SearchOption.TopDirectoryOnly);
-                        foreach (var r in result)
-                        {
-                            File.Move(r, Path.Combine(dest, Path.GetFileName(r)));
-                        }
+                        File.Move(r, Path.Combine(dest, Path.GetFileName(r)));
                     }
                 }
                 //break;

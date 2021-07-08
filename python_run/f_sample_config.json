@@ -1,7 +1,7 @@
 {
   "Storage": {
-    "ContentSource": "",
-    "StyleSource": "",
+    "ContentSource": "/home/eugene/Pictures/2/",
+    "StyleSource": "/home/eugene/Pictures/2/",
     "NormalizedSource": "/home/eugene/Pictures/norm/",
     "Destination": "/home/eugene/Pictures/grid/"
   },

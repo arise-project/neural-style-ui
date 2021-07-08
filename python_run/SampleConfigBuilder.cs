@@ -7,7 +7,7 @@ namespace python_run
     {
         public void SaveP()
         {
-            var config = new PermutationStrategy
+            var config = new FiftyFiftyStrategy
             {
                 Runner = new StartParams {
                     Runner = "python3",
@@ -16,18 +16,20 @@ namespace python_run
                 ScriptArguments = new NSParams{
                     OutputImage = "test.jpg",
                     ImageSize = 800,
-                    Gpu = new int [] { 0 },
+                    Gpu = new int [] { 0,1 },
+                    MultideviceStrategy = new int [] { 6 },
                     Backend = "cudnn",
                     NumIterations = 800
                 },
-                Storage = new PStorageParams {
-                    Source = "/home/eugene/Pictures/2/",
+                Storage = new FStorageParams {
+                    ContentSource = "/home/eugene/Pictures/2/",
+                    StyleSource = "/home/eugene/Pictures/2/",
                     NormalizedSource = "/home/eugene/Pictures/norm/",
                     Destination = "/home/eugene/Pictures/grid/"
                 }
             };
            var jsonStr = JsonSerializer.Serialize(config, new JsonSerializerOptions { WriteIndented = true });
-           File.WriteAllText("p_sample_config.json", jsonStr);
+           File.WriteAllText("f_sample_config.json", jsonStr);
         }
         
 

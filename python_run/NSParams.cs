@@ -1,5 +1,6 @@
 //python3 
 //neural_style.py 
+using System;
 
 namespace python_run
 {
@@ -9,14 +10,23 @@ namespace python_run
         public string ContentImage { get; set;} 
         public string OutputImage { get; set; } 
         public int [] Gpu { get; set; } 
+        public int [] MultideviceStrategy { get;set; }
         public string Backend { get; set; } 
         public int NumIterations { get; set; } 
         public int ImageSize { get; set; }
+        
 
         public override string ToString()
         {
             var gpu = string.Join(",", Gpu);
-            return $"-num_iterations {NumIterations} -style_image \"{StyleImage}\" -content_image \"{ContentImage}\" -output_image \"{OutputImage}\" -image_size {ImageSize} -gpu {gpu} -backend {Backend} -save_iter 0";
+            var args = $"-num_iterations {NumIterations} -style_image \"{StyleImage}\" -content_image \"{ContentImage}\" -output_image \"{OutputImage}\" -image_size {ImageSize} -gpu {gpu} -backend {Backend} -save_iter 0";
+            Console.WriteLine(MultideviceStrategy != null);
+            if(MultideviceStrategy?.Length > 0)
+            {
+                args += $" -multidevice_strategy {string.Join(",", MultideviceStrategy)}";
+            }
+
+            return args;
         }
 
         public NSParams Clone()
@@ -26,7 +36,8 @@ namespace python_run
                 Gpu = Gpu,
                 ImageSize = ImageSize,
                 NumIterations = NumIterations,
-                OutputImage = OutputImage
+                OutputImage = OutputImage,
+                MultideviceStrategy = MultideviceStrategy
             };
         }
     }
