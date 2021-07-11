@@ -14,6 +14,8 @@ namespace python_run
         public string Backend { get; set; } 
         public int NumIterations { get; set; } 
         public int ImageSize { get; set; }
+        public float? StyleScale { get; set; }
+        public float? StyleWeight { get; set; }
         
 
         public override string ToString()
@@ -21,9 +23,20 @@ namespace python_run
             var gpu = string.Join(",", Gpu);
             var args = $"-num_iterations {NumIterations} -style_image \"{StyleImage}\" -content_image \"{ContentImage}\" -output_image \"{OutputImage}\" -image_size {ImageSize} -gpu {gpu} -backend {Backend} -save_iter 0";
             Console.WriteLine(MultideviceStrategy != null);
+            
             if(MultideviceStrategy?.Length > 0)
             {
                 args += $" -multidevice_strategy {string.Join(",", MultideviceStrategy)}";
+            }
+
+            if(StyleScale.HasValue)
+            {
+                args += $" -style_scale {StyleScale}";
+            }
+
+            if(StyleWeight.HasValue)
+            {
+                args += $" -style_weight {StyleWeight}";
             }
 
             return args;
@@ -37,7 +50,9 @@ namespace python_run
                 ImageSize = ImageSize,
                 NumIterations = NumIterations,
                 OutputImage = OutputImage,
-                MultideviceStrategy = MultideviceStrategy
+                MultideviceStrategy = MultideviceStrategy,
+                StyleScale = StyleScale,
+                StyleWeight = StyleWeight
             };
         }
     }
