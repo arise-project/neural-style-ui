@@ -11,7 +11,7 @@ namespace python_run
         {
             // new SampleConfigBuilder().SaveP();
             // return 0;
-            StrategyType t = StrategyType.FiftyFifty;
+            StrategyType t = StrategyType.Sorted;
 
             System.Environment.SetEnvironmentVariable("NEURAL_STYLE_HOME", "/home/eugene/Projects/neural-style-pt/");
             var workDir = System.Environment.GetEnvironmentVariable("NEURAL_STYLE_HOME");
@@ -41,6 +41,9 @@ namespace python_run
                 case StrategyType.FiftyFifty:
                 core = new FVariants();
                 break;
+                case StrategyType.Sorted:
+                core = new SVariants();
+                break;
             }
 
             if(core == null)
@@ -55,6 +58,7 @@ namespace python_run
             foreach (var variant in variants)
             {
                 Console.WriteLine(variant.ToString());
+                Console.WriteLine(DateTime.Now.ToLongTimeString());
                 var res = new NeyralStyleRunnerPython().Execute(variant.ToString());
                 if (res.Length == 2)
                 {
@@ -66,6 +70,7 @@ namespace python_run
                     foreach (var r in result)
                     {
                         File.Move(r, Path.Combine(dest, Path.GetFileName(r)));
+                        Console.WriteLine(DateTime.Now.ToLongTimeString());
                     }
                 }
                 //break;

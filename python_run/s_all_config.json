@@ -1,0 +1,27 @@
+{
+  "Storage": {
+    "SortedSource": "/home/eugene/Pictures/grid12/sort/",
+    "NormalizedSource": "/home/eugene/Pictures/grid12/norm/",
+    "Destination": "/home/eugene/Pictures/grid/"
+  },
+  "ScriptArguments": {
+    "StyleImage": null,
+    "ContentImage": null,
+    "OutputImage": "test.jpg",
+    "Gpu": [
+      0,
+      1
+    ],
+    "MultideviceStrategy": [
+      6
+    ],
+    "Backend": "cudnn",
+    "NumIterations": 5000,
+    "ImageSize": 1000,
+    "StyleWeight": 20000.0
+  },
+  "Runner": {
+    "Runner": "python3",
+    "Script": "neural_style.py"
+  }
+}

@@ -4,6 +4,7 @@ namespace python_run
     {
         Permutation,
         Matrix,
-        FiftyFifty
+        FiftyFifty,
+        Sorted
     }
 }
