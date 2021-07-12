@@ -15,13 +15,17 @@ namespace python_run
             {
                 var select = Path.GetFileNameWithoutExtension(s).Split('_');
                 var c = copy.Clone();
-                c.ContentImage = dim1.First(d => Path.GetFileNameWithoutExtension(d) == select[0]);
-                c.StyleImage = dim2.First(d => Path.GetFileNameWithoutExtension(d) == select[1]);
-                var img = Path.GetFileNameWithoutExtension(s) + ".jpg";
-                c.OutputImage = img;
+                if(dim1.Any(d => Path.GetFileNameWithoutExtension(d) == select[0]) &&
+                dim2.Any(d => Path.GetFileNameWithoutExtension(d) == select[1]))
+                {
+                    c.ContentImage = dim1.First(d => Path.GetFileNameWithoutExtension(d) == select[0]);
+                    c.StyleImage = dim2.First(d => Path.GetFileNameWithoutExtension(d) == select[1]);
+                    var img = Path.GetFileNameWithoutExtension(s) + ".jpg";
+                    c.OutputImage = img;
 
-                Console.WriteLine("{0} -- {1}", c.ContentImage, c.StyleImage);
-                result.Add(c);
+                    Console.WriteLine("{0} -- {1}", c.ContentImage, c.StyleImage);
+                    result.Add(c);
+                }
             }
 
             return result;
