@@ -17,8 +17,8 @@
       6
     ],
     "Backend": "cudnn",
-    "NumIterations": 500,
-    "ImageSize": 500,
+    "NumIterations": 3000,
+    "ImageSize": 900,
     "StyleWeight": 20000.0
   },
   "Runner": {

@@ -16,7 +16,12 @@ namespace python_run
         public int ImageSize { get; set; }
         public float? StyleScale { get; set; }
         public float? StyleWeight { get; set; }
+        public float? TvWeight { get; set; }
         
+        public bool? NormalizeGradients { get;set; }
+        public bool? OriginalColors { get;set; }
+        public bool? CudnnAutotune { get;set; }
+
 
         public override string ToString()
         {
@@ -39,6 +44,26 @@ namespace python_run
                 args += $" -style_weight {StyleWeight}";
             }
 
+            if(TvWeight.HasValue)
+            {
+                args += $" -tv_weight {TvWeight}";
+            }
+
+            if(NormalizeGradients == true)
+            {
+                args += $" -normalize_gradients";
+            }
+
+            if(OriginalColors == true)
+            {
+                args += $" -original_colors";
+            }
+
+            if(CudnnAutotune == true)
+            {
+                args += $" -cudnn_autotune";
+            }
+
             return args;
         }
 
@@ -52,7 +77,11 @@ namespace python_run
                 OutputImage = OutputImage,
                 MultideviceStrategy = MultideviceStrategy,
                 StyleScale = StyleScale,
-                StyleWeight = StyleWeight
+                StyleWeight = StyleWeight,
+                TvWeight = TvWeight,
+                NormalizeGradients = NormalizeGradients,
+                OriginalColors = OriginalColors,
+                CudnnAutotune = CudnnAutotune
             };
         }
     }
