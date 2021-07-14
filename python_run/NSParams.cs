@@ -9,6 +9,7 @@ namespace python_run
         public string StyleImage {get; set;} 
         public string ContentImage { get; set;} 
         public string OutputImage { get; set; } 
+        public string Optimizer { get; set; } 
         public int [] Gpu { get; set; } 
         public int [] MultideviceStrategy { get;set; }
         public string Backend { get; set; } 
@@ -17,6 +18,7 @@ namespace python_run
         public float? StyleScale { get; set; }
         public float? StyleWeight { get; set; }
         public float? TvWeight { get; set; }
+        public float? ContentWeight { get; set; }
         
         public bool? NormalizeGradients { get;set; }
         public bool? OriginalColors { get;set; }
@@ -49,6 +51,11 @@ namespace python_run
                 args += $" -tv_weight {TvWeight}";
             }
 
+            if(ContentWeight.HasValue)
+            {
+                args += $" -content_weight {ContentWeight}";
+            }
+
             if(NormalizeGradients == true)
             {
                 args += $" -normalize_gradients";
@@ -62,6 +69,11 @@ namespace python_run
             if(CudnnAutotune == true)
             {
                 args += $" -cudnn_autotune";
+            }
+
+            if(!string.IsNullOrEmpty(Optimizer))
+            {
+                args += $" -optimizer {Optimizer}";
             }
 
             return args;
@@ -81,7 +93,9 @@ namespace python_run
                 TvWeight = TvWeight,
                 NormalizeGradients = NormalizeGradients,
                 OriginalColors = OriginalColors,
-                CudnnAutotune = CudnnAutotune
+                CudnnAutotune = CudnnAutotune,
+                ContentWeight = ContentWeight,
+                Optimizer = Optimizer
             };
         }
     }
