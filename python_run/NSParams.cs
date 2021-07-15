@@ -63,7 +63,7 @@ namespace python_run
 
             if(OriginalColors == true)
             {
-                args += $" -original_colors";
+                args += $" -original_colors 1";
             }
 
             if(CudnnAutotune == true)

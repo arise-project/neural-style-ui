@@ -20,7 +20,9 @@
     "NumIterations": 3000,
     "ImageSize": 1200,
     "StyleWeight": 20000.0,
-    "Optimizer" : "adam"
+    "Optimizer" : "adam",
+    "OriginalColors" : true,
+    "CudnnAutotune": true
   },
   "Runner": {
     "Runner": "python3",
