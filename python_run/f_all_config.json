@@ -21,8 +21,8 @@
     "ImageSize": 1200,
     "StyleWeight": 20000.0,
     "Optimizer" : "adam",
-    "OriginalColors" : true,
-    "CudnnAutotune": true
+    "CudnnAutotune": true,
+    "TvWeight": 0
   },
   "Runner": {
     "Runner": "python3",

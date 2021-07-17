@@ -19,11 +19,15 @@ namespace python_run
         public float? StyleWeight { get; set; }
         public float? TvWeight { get; set; }
         public float? ContentWeight { get; set; }
-        
         public bool? NormalizeGradients { get;set; }
         public bool? OriginalColors { get;set; }
         public bool? CudnnAutotune { get;set; }
-
+        public string Init { get; set; } 
+        public string InitImagePath { get; set; } 
+        public float? AdamLearningRate { get; set; }
+        public string ModelFile { get; set; } 
+        public string Pooling { get; set; } 
+        public int? Seed { get; set; } 
 
         public override string ToString()
         {
@@ -76,6 +80,36 @@ namespace python_run
                 args += $" -optimizer {Optimizer}";
             }
 
+            if(!string.IsNullOrEmpty(Init))
+            {
+                args += $" -init {Init}";
+            }
+
+            if(!string.IsNullOrEmpty(InitImagePath))
+            {
+                args += $" -init_image {InitImagePath}";
+            }
+
+            if(!string.IsNullOrEmpty(ModelFile))
+            {
+                args += $" -model_file {ModelFile}";
+            }
+
+            if(AdamLearningRate.HasValue)
+            {
+                args += $" -learning_rate {AdamLearningRate}";
+            }
+
+            if(!string.IsNullOrEmpty(Pooling))
+            {
+                args += $" -pooling {Pooling}";
+            }
+
+            if(Seed.HasValue)
+            {
+                args += $" -seed {Seed}";
+            }
+
             return args;
         }
 
@@ -95,7 +129,13 @@ namespace python_run
                 OriginalColors = OriginalColors,
                 CudnnAutotune = CudnnAutotune,
                 ContentWeight = ContentWeight,
-                Optimizer = Optimizer
+                Optimizer = Optimizer,
+                Init = Init,
+                InitImagePath = InitImagePath,
+                ModelFile = ModelFile,
+                AdamLearningRate = AdamLearningRate,
+                Pooling = Pooling,
+                Seed = Seed
             };
         }
     }
