@@ -20,9 +20,9 @@ namespace python_run
 
         public IEnumerable<string> Build(MatrixStrategy strategy)
         {
-            var c_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "/c/", "*.jpg", SearchOption.AllDirectories);
+            var c_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "c/", "*.jpg", SearchOption.AllDirectories);
 
-            var s_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "/s/", "*.jpg", SearchOption.AllDirectories);
+            var s_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "s/", "*.jpg", SearchOption.AllDirectories);
 
             var pairs = new Matrix().Generate(c_files, s_files, strategy.ScriptArguments);
 
@@ -34,9 +34,9 @@ namespace python_run
 
         public IEnumerable<string> Build(FiftyFiftyStrategy strategy)
         {
-            var c_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "/c/", "*.jpg", SearchOption.AllDirectories);
+            var c_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "c/", "*.jpg", SearchOption.AllDirectories);
 
-            var s_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "/s/", "*.jpg", SearchOption.AllDirectories);
+            var s_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "s/", "*.jpg", SearchOption.AllDirectories);
 
             var pairs = new FiftyFifty().Generate(c_files, s_files, strategy.ScriptArguments);
 
@@ -48,9 +48,9 @@ namespace python_run
 
         public IEnumerable<string> Build(SortedStrategy strategy)
         {
-            var c_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "/c/", "*.jpg", SearchOption.AllDirectories);
+            var c_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "c/", "*.jpg", SearchOption.AllDirectories);
 
-            var s_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "/s/", "*.jpg", SearchOption.AllDirectories);
+            var s_files = Directory.GetFiles(strategy.Storage.NormalizedSource + "s/", "*.jpg", SearchOption.AllDirectories);
 
             var sorted = Directory.GetFiles(strategy.Storage.SortedSource, "*.jpg", SearchOption.AllDirectories);
 
