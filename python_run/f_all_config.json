@@ -19,10 +19,9 @@
     "Backend": "cudnn",
     "NumIterations": 500,
     "ImageSize": 500,
-    "StyleWeight": 20000.0,
-    "Optimizer" : "adam",
+    "StyleWeight": 1000.0,
     "CudnnAutotune": true,
-    "TvWeight": 0
+    "OriginalColors": true
   },
   "Runner": {
     "Runner": "python3",

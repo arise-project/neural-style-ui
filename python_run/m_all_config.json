@@ -2,19 +2,25 @@
   "Storage": {
     "ContentSource": "",
     "StyleSource": "",
-    "NormalizedSource": "/home/eugene/Pictures/norm/",
-    "Destination": "/home/eugene/Pictures/grid/"
+    "NormalizedSource": "/home/eugene/Documents/norm/",
+    "Destination": "/home/eugene/Documents/grid/"
   },
   "ScriptArguments": {
     "StyleImage": null,
     "ContentImage": null,
     "OutputImage": "test.jpg",
     "Gpu": [
-      0
+      0,
+      1
+    ],
+    "MultideviceStrategy": [
+      6
     ],
     "Backend": "cudnn",
-    "NumIterations": 500,
-    "ImageSize": 600
+    "NumIterations": 300,
+    "ImageSize": 400,
+    "CudnnAutotune": true,
+    "StyleWeight": 100.0
   },
   "Runner": {
     "Runner": "python3",

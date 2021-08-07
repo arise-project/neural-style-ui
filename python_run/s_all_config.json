@@ -1,7 +1,7 @@
 {
   "Storage": {
-    "SortedSource": "/home/eugene/Pictures/grid12/sort/",
-    "NormalizedSource": "/home/eugene/Pictures/grid12/norm/",
+    "SortedSource": "/home/eugene/Pictures/grid18/sort/",
+    "NormalizedSource": "/home/eugene/Pictures/grid18/norm/",
     "Destination": "/home/eugene/Pictures/grid/"
   },
   "ScriptArguments": {
@@ -16,9 +16,10 @@
       6
     ],
     "Backend": "cudnn",
-    "NumIterations": 400,
-    "ImageSize": 1000,
-    "StyleWeight": 20000.0
+    "NumIterations": 8000,
+    "ImageSize": 1150,
+    "StyleWeight": 100.0,
+    "CudnnAutotune": true
   },
   "Runner": {
     "Runner": "python3",

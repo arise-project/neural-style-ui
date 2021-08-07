@@ -11,7 +11,7 @@ namespace python_run
         {
             // new SampleConfigBuilder().SaveP();
             // return 0;
-            StrategyType t = StrategyType.FiftyFifty;
+            StrategyType t = StrategyType.Matrix;
 
             System.Environment.SetEnvironmentVariable("NEURAL_STYLE_HOME", "/home/eugene/Projects/neural-style-pt/");
             var workDir = System.Environment.GetEnvironmentVariable("NEURAL_STYLE_HOME");

@@ -18,6 +18,7 @@ namespace python_run
             
             foreach(string d1 in dim1)
             {   
+                
                     var c = copy.Clone();
                     c.ContentImage = d1;
                     c.StyleImage = d2;
