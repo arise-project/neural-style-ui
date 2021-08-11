@@ -12,8 +12,8 @@ namespace python_run.Poligragy
     {
         public void Add(string fileName)
         {
-             using(FileStream pngStream = new FileStream(fileName,FileMode.Open, FileAccess.ReadWrite))
-            using(var image = new Bitmap(pngStream))
+             using(FileStream jpgStream = new FileStream(fileName,FileMode.Open, FileAccess.ReadWrite))
+            using(var image = new Bitmap(jpgStream))
             {
                 var dpi = (int)image.HorizontalResolution;
                 var k = A._72DPI.Keys.ToArray();
@@ -37,7 +37,7 @@ namespace python_run.Poligragy
                     graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
                     graphics.CompositingMode = CompositingMode.SourceCopy;
                     graphics.DrawImage(image, 0, (h - image.Height)/2, image.Width, image.Height);
-                    resized.Save(pngStream, ImageFormat.Png);
+                    resized.Save(jpgStream, ImageFormat.Jpeg);
                 }       
             } 
  
