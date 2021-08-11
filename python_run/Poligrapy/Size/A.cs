@@ -1,5 +1,6 @@
+using System;
 using System.Collections.Generic;
-namespace python_run
+namespace python_run.Poligragy.Size
 {
     //https://www.a4-size.com/a4-size-in-pixels/
     public class A
@@ -66,8 +67,19 @@ namespace python_run
 
         public static A Get(string name, int dpi)
         {
-            var etalon = _72DPI[name];
-            return etalon;
+            switch(dpi)
+            {
+                case 72:
+                return _72DPI[name];
+                case 96:
+                return _72DPI[name];
+                case 150:
+                return _72DPI[name];
+                case 300:
+                return _72DPI[name];
+                default:
+                throw new NotImplementedException();
+            }
         }
     }
 }
