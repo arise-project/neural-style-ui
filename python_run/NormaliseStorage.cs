@@ -7,14 +7,14 @@ namespace python_run
     {
         public int Execute(string source, string normalisedSource)
         {
-            var files = Directory.GetFiles(source, "*.jpg", SearchOption.AllDirectories);
+            var files = Directory.GetFiles(source.TrimEnd('/'), "*.jpg", SearchOption.AllDirectories);
             int index = 1;
-            var ic = new ImageCanva();
+            //var ic = new ImageCanva();
             foreach(var file in files)
             {
                 var fileName = Path.Combine(normalisedSource, index++ + ".jpg");
                 File.Copy(file, fileName);
-                ic.Add(fileName);
+                //ic.Add(fileName);
             }
 
             return index - 1;

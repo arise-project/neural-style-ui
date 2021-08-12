@@ -17,8 +17,8 @@
       6
     ],
     "Backend": "cudnn",
-    "NumIterations": 300,
-    "ImageSize": 400,
+    "NumIterations": 500,
+    "ImageSize": 500,
     "CudnnAutotune": true,
     "StyleWeight": 100.0
   },
