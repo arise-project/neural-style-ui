@@ -8,3 +8,6 @@ export NEURAL_STYLE_HOME=/home/eugene/Projects/neural-style-pt/
 "ContentSource": "/home/eugene/Pictures/p1/c/",
     "StyleSource": "/home/eugene/Pictures/p1/s/",
     
+
+mogrify -format jpg *.png
+
