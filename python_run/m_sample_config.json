@@ -1,9 +1,9 @@
 {
   "Storage": {
-    "ContentSource": "/home/eugene/Pictures/p1/c/",
-    "StyleSource": "/home/eugene/Pictures/p1/s/",
-    "NormalizedSource": "/home/eugene/Pictures/norm/",
-    "Destination": "/home/eugene/Pictures/grid/"
+    "ContentSource": "/home/eugene/Documents/1/c/",
+    "StyleSource": "/home/eugene/Documents/1/s/",
+    "NormalizedSource": "//home/eugene/Documents/norm/",
+    "Destination": "/home/eugene/Documents/grid/"
   },
   "ScriptArguments": {
     "StyleImage": null,

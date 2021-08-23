@@ -17,10 +17,10 @@
       6
     ],
     "Backend": "cudnn",
-    "NumIterations": 500,
+    "NumIterations": 1000,
     "ImageSize": 500,
     "CudnnAutotune": true,
-    "StyleWeight": 100.0
+    "StyleWeight": 1000.0
   },
   "Runner": {
     "Runner": "python3",

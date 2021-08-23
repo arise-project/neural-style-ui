@@ -1,8 +1,8 @@
 {
   "Storage": {
-    "SortedSource": "/home/eugene/Pictures/grid18/sort/",
-    "NormalizedSource": "/home/eugene/Pictures/grid18/norm/",
-    "Destination": "/home/eugene/Pictures/grid/"
+    "SortedSource": "/home/eugene/Documents/grid6/sort/",
+    "NormalizedSource": "/home/eugene/Documents/grid6/norm/",
+    "Destination": "/home/eugene/Documents/grid8/"
   },
   "ScriptArguments": {
     "StyleImage": null,
@@ -16,9 +16,9 @@
       6
     ],
     "Backend": "cudnn",
-    "NumIterations": 8000,
-    "ImageSize": 1150,
-    "StyleWeight": 100.0,
+    "NumIterations": 6000,
+    "ImageSize": 900,
+    "StyleWeight": 800.0,
     "CudnnAutotune": true
   },
   "Runner": {
