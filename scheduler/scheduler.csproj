@@ -8,5 +8,9 @@
     <PackageReference Include="NCronTab" Version="3.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\python_run\python_run.csproj" />
+  </ItemGroup>
+
 
 </Project>
